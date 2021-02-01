@@ -17,43 +17,18 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     "inbounds": [
         {
             "port": $PORT,
-            "protocol": "vless",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "$UUID"
-                    }
-                ],
-                "decryption": "none"
-            },
-            "fallbacks": [
-                {
-                    "path": "/vmess",
-                    "dest": 1234,
-                    "xver": 1
-                }
-            ],
-            "streamSettings": {
-                "network": "ws"
-            }
-        },
-        {
-            "port": 1234,
             "protocol": "vmess",
             "settings": {
                 "clients": [
                     {
                         "id": "$UUID",
-                        "alterId": 64
+                        "alterId": 0
                     }
                 ],
                 "disableInsecureEncryption": true
             },
             "streamSettings": {
-                "network": "ws",
-                "wsSettings": {
-                    "path": "/vmess"
-                }
+                "network": "ws"
             }
         }
     ],
