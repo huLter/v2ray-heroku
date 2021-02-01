@@ -24,20 +24,17 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                         "id": "$UUID"
                     }
                 ],
-                "decryption": "none",
-                "fallbacks": [
-                    {
-                        "path": "/vmess",
-                        "dest": 1234,
-                        "xver": 1
-                    }
-                ]
+                "decryption": "none"
             },
-            "streamSettings": {
-                "network": "ws",
-                "wsSettings": {
-                    "path": "/vless"
+            "fallbacks": [
+                {
+                    "path": "/vmess",
+                    "dest": 1234,
+                    "xver": 1
                 }
+            ],
+            "streamSettings": {
+                "network": "ws"
             }
         },
         {
@@ -47,7 +44,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "clients": [
                     {
                         "id": "$UUID",
-                        "alterId": 0
+                        "alterId": 64
                     }
                 ],
                 "disableInsecureEncryption": true
